@@ -29,12 +29,6 @@ class _ContadorTelaState extends State<ContadorTela> {
       contador++;
     });
   }
-  void decrementar() {
-    setState(() {
-      if (contador >0) {contador--;}
-      
-    });
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,36 +41,17 @@ class _ContadorTelaState extends State<ContadorTela> {
               SizedBox(height: 20,),
               Text(" $contador curtidas",
             style: const TextStyle(fontSize: 18,  fontWeight: FontWeight.bold),),
-
-            SizedBox(height: 20),
-
-            Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                
-                ElevatedButton(
+            SizedBox(height: 20,),
+              ElevatedButton(
                 onPressed: incrementar,
-               child: Text("👍 Curtir", style: TextStyle(fontSize: 18),),
+               child: Text("Curtir", style: TextStyle(fontSize: 18),),
                ),
-
-
-               
-              
-              const SizedBox(width:  20,),
-
-               ElevatedButton(
-                onPressed: decrementar,
-               child: Text("👎 Descurtir", style: TextStyle(fontSize: 18),),
-               ),
-              
 
             ],
             
             )
-            ],
+            
        ),
-       
-      ),
     );
   }
 }

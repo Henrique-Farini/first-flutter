@@ -59,7 +59,6 @@ class _ContadorTelaState extends State<ContadorTela> {
                child: Text("👍 Curtir", style: TextStyle(fontSize: 18),),
                ),
 
-
                
               
               const SizedBox(width:  20,),
