@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text("Exemplo Container")),
+        appBar: AppBar(title: Text("Exemplo Container") ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
