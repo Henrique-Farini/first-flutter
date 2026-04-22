@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-
               Container(
                 width: 350,
                 height: 210,
@@ -33,7 +32,6 @@ class MyApp extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-
                     Row(
                       children: [
                         Image.asset(
@@ -52,10 +50,7 @@ class MyApp extends StatelessWidget {
                         ),
                       ],
                     ),
-
                     const SizedBox(height: 10),
-
-                
                     const Row(
                       children: [
                         SizedBox(width: 5),
@@ -70,8 +65,6 @@ class MyApp extends StatelessWidget {
                         ),
                       ],
                     ),
-
-                
                     const Row(
                       children: [
                         SizedBox(width: 5),
@@ -86,10 +79,7 @@ class MyApp extends StatelessWidget {
                         ),
                       ],
                     ),
-
                     const SizedBox(height: 30),
-
-                  
                     Row(
                       children: [
                         Container(
@@ -130,18 +120,10 @@ class MyApp extends StatelessWidget {
                   ],
                 ),
               ),
-
               const SizedBox(height: 20),
-
               const CartaoModelo2(),
-
-              
               const SizedBox(height: 20),
-
-                const CartaoModelo3(),
-
-
-
+              const CartaoModelo3(),
             ],
           ),
         ),
@@ -160,27 +142,33 @@ class CartaoModelo2 extends StatelessWidget {
       height: 210,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-          color: Colors.black,
+        color: Colors.black,
       ),
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-            Row(
-              children: [
-                 const Text(
-            "Tech",
-            style: TextStyle(color: Colors.white70),),
-          const SizedBox(width: 260),
-          Icon(Icons.contactless, size: 25, color: Colors.white,)
-              ],
-            ),
-            const SizedBox(height: 10,),
-
-            const Icon(Icons.sim_card, size: 35, color: Color.fromARGB(255, 255, 187, 0),),
-
-         
-          const SizedBox(height: 15,),
+          Row(
+            children: const [
+              Text(
+                "Tech",
+                style: TextStyle(color: Colors.white70),
+              ),
+              Spacer(),
+              Icon(
+                Icons.contactless,
+                size: 25,
+                color: Colors.white,
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          const Icon(
+            Icons.sim_card,
+            size: 35,
+            color: Color.fromARGB(255, 255, 187, 0),
+          ),
+          const SizedBox(height: 15),
           const Text(
             "5679 8028 1647 6596",
             style: TextStyle(
@@ -189,44 +177,39 @@ class CartaoModelo2 extends StatelessWidget {
               letterSpacing: 2,
             ),
           ),
-          const SizedBox(height: 20,),
-                      const Row(
-                      children: [
-                        SizedBox(width: 5),
-                        Text(
-                          "Titular",
-                          style: TextStyle(color: Colors.white70),
-                        ),
-                        SizedBox(width: 200),
-                        Text(
-                          "validade",
-                          style: TextStyle(color: Colors.white70),
-                        ),
-                      ],
-                    ),
-                     const Row(
-                      children: [
-                        SizedBox(width: 5),
-                        
-          SizedBox(height: 20),
-           Text(
-            "Henrique Farini",
-            style: TextStyle(color: Colors.white),
+          const SizedBox(height: 20),
+          const Row(
+            children: [
+              Text(
+                "Titular",
+                style: TextStyle(color: Colors.white70),
+              ),
+              Spacer(),
+              Text(
+                "validade",
+                style: TextStyle(color: Colors.white70),
+              ),
+            ],
           ),
-          SizedBox(width: 150),
-            Text("08/29", style: TextStyle(color: Colors.white),)
-                      ],
-                    ),
-
-        
+          const SizedBox(height: 5),
+          const Row(
+            children: [
+              Text(
+                "Henrique Farini",
+                style: TextStyle(color: Colors.white),
+              ),
+              Spacer(),
+              Text(
+                "08/29",
+                style: TextStyle(color: Colors.white),
+              ),
+            ],
+          ),
         ],
       ),
     );
-
   }
 }
-
-
 
 class CartaoModelo3 extends StatelessWidget {
   const CartaoModelo3({super.key});
@@ -238,62 +221,58 @@ class CartaoModelo3 extends StatelessWidget {
       height: 210,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-          color: const Color(0xFF8A05BE),
+        color: const Color(0xFF8A05BE),
       ),
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-            Row(
-              children: [
-                 const Text(" "),
-          const SizedBox(width: 240),
-          Image.asset(
-                          'assets/images/mastercard_itau_cartao.png',
-                          width: 60,
-                          height: 60,
-                        ),
-          
-              ],
-            ),
-           
-
-                Row(
-              children: [
-                 
-               Image.asset('assets/images/chip3.png',
-                          width: 60,
-                          height: 60,
-                        ),
-
-                Icon(Icons.contactless, size: 25, color: Colors.white,)
-              ],
-            ),
-
-            const SizedBox(height: 5,),
-                   Row(
-              children: [
-                 
-               Image.asset('assets/images/nubank1.png',
-                          width: 50,
-                          height: 50,
-                        ),
-
-                const Text("Henrique Farini", style: TextStyle(color: Colors.white, fontSize:    18, fontWeight: FontWeight.bold),)
-              ],
-            ),
-
-
-              
-
-
-
-        
-
-        
+          Row(
+            children: [
+              const Spacer(),
+              Image.asset(
+                'assets/images/mastercard_itau_cartao.png',
+                width: 60,
+                height: 60,
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Image.asset(
+                'assets/images/chip3.png',
+                width: 60,
+                height: 60,
+              ),
+              const Spacer(),
+              const Icon(
+                Icons.contactless,
+                size: 25,
+                color: Colors.white,
+              ),
+            ],
+          ),
+          const SizedBox(height: 5),
+          Row(
+            children: [
+              Image.asset(
+                'assets/images/nubank1.png',
+                width: 50,
+                height: 50,
+              ),
+              const SizedBox(width: 10),
+              const Text(
+                "Henrique Farini",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
-
   }
 }
