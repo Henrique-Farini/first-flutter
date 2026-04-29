@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(ScrollApp());
+}
+
+class ScrollApp extends StatelessWidget {
+  const ScrollApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Exemplo Scroll",
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("SingleChildScrollView"),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: List.generate(
+              20,
+               (index) => Container(
+                margin: const EdgeInsets.all(10),
+                height: 80,
+                color: const Color.fromARGB(255, 201, 33, 243),
+                child: Center(
+                  child: Text(
+                    "Item ${index + 1}",
+                    style: const TextStyle(color: Colors.white, fontSize: 18),
+                  ),
+                ),
+               
+
+          ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
