@@ -11,6 +11,7 @@ class LoginApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: "Responsividade",
       home: LoginScreen(),
     );
   }
@@ -34,6 +35,7 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              SizedBox(height: height * 0.05),
               const Icon(
                 Icons.lock,
                 size: 80,
