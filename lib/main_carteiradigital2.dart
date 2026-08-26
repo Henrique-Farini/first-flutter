@@ -27,42 +27,74 @@ class CarteiraDigital extends StatelessWidget {
         title: const Text("Carteira Digital"),
         centerTitle: true,
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(20),
-        children: const [
-          CartaoBanco(
-            corCartao: Color.fromARGB(255, 58, 183, 71),
-            banco: "Banco SESI",
-            numero: "1234 5678 9012 3456",
-            nome: "Henrique Farini",
-            validade: "12/30",
-            logoMarca: AssetImage('assets/images/Sesi.jpg'),
-          ),
-          SizedBox(height: 20),
-          CartaoBanco(
-            corCartao: Color.fromARGB(255, 219, 132, 74),
-            banco: "Inter",
-            numero: "6965 4375 8962 7667",
-            nome: "Henrique Farini",
-            validade: "08/28",
-            logoBandeira:
-                AssetImage('assets/images/mastercard_itau_cartao.png'),
-          ),
-          SizedBox(height: 20),
-           CartaoBanco(
-            corCartao: Color.fromARGB(255, 147, 74, 219),
-            banco: "Nubank",
-            numero: "1233 4044 5435 4854",
-            nome: "Henrique Farini",
-            validade: "05/27",
-            logoBandeira:AssetImage('assets/images/nubank.png'),
-            logoMarca: AssetImage('assets/images/visa.png'),
-          ),
-        ],
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          final cartoes = [
+            const CartaoBanco(
+              corCartao: Color.fromARGB(255, 58, 183, 71),
+              banco: "Banco SESI",
+              numero: "1234 5678 9012 3456",
+              nome: "Henrique Farini",
+              validade: "12/30",
+              logoMarca: AssetImage('assets/images/Sesi.jpg'),
+            ),
+            const CartaoBanco(
+              corCartao: Color.fromARGB(255, 219, 132, 74),
+              banco: "Inter",
+              numero: "6965 4375 8962 7667",
+              nome: "Henrique Farini",
+              validade: "08/28",
+              logoBandeira: AssetImage('assets/images/mastercard_itau_cartao.png'),
+            ),
+            const CartaoBanco(
+              corCartao: Color.fromARGB(255, 147, 74, 219),
+              banco: "Nubank",
+              numero: "1233 4044 5435 4854",
+              nome: "Henrique Farini",
+              validade: "05/27",
+              logoBandeira: AssetImage('assets/images/nubank.png'),
+              logoMarca: AssetImage('assets/images/visa.png'),
+            ),
+          ];
+
+          double larguraTela = constraints.maxWidth;
+
+          if (larguraTela > 600) {
+           
+            int colunas = (larguraTela / 350).floor();
+           
+            if (colunas < 2) colunas = 2;
+
+            return Center(
+              child: Container(
+                constraints: const BoxConstraints(maxWidth: 1200),
+                child: GridView.builder(
+                  padding: const EdgeInsets.all(20),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: colunas, 
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 20,
+                    mainAxisExtent: 220, 
+                  ),
+                  itemCount: cartoes.length,
+                  itemBuilder: (context, index) => cartoes[index],
+                ),
+              ),
+            );
+          }
+
+          return ListView.separated(
+            padding: const EdgeInsets.all(20),
+            itemCount: cartoes.length,
+            separatorBuilder: (context, index) => const SizedBox(height: 20),
+            itemBuilder: (context, index) => cartoes[index],
+          );
+        },
       ),
     );
   }
 }
+
 
 class CartaoBanco extends StatelessWidget {
   final Color corCartao;
