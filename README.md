@@ -1,17 +1,35 @@
-# hello_world
+# Flutter: estudos e apps
 
-A new Flutter project.
+Meus exercícios e apps de **Flutter/Dart** do curso técnico em Desenvolvimento de Sistemas (SENAI). Cada arquivo `lib/main_*.dart` é um exercício independente, e a pasta `appgps/` é um app separado de geolocalização.
 
-## Getting Started
+## O que tem aqui
 
-This project is a starting point for a Flutter application.
+**Apps**
+- **Carteira digital** e **cartão de banco** (`main_carteiradigital.dart`, `main_cartao.dart`)
+- **Controle financeiro** com tela de novos lançamentos (`main_controlefinanceiro.dart`)
+- **Localização / GPS** com o pacote `geolocator` (`main_gpsatividade.dart` e o app `appgps/`)
+- **Tela de login** e cartão de identificação
 
-A few resources to get you started if this is your first Flutter project:
+**Fundamentos de layout e widgets**
+- `Row`, `Column`, `Container`, `Expanded`, `Flexible`, `SafeArea`, `SingleChildScrollView`
+- Responsividade com `MediaQuery`
+- Formulários e teclados (`TextField`, `TextFormField`)
+- Estado com `StatefulWidget`, controllers e `Provider`
+- Navegação com `go_router` e dados salvos com `shared_preferences`
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Como rodar
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub get
+flutter run
+```
+
+Para rodar outro exercício, aponte para o arquivo dele:
+
+```bash
+flutter run -t lib/main_controlefinanceiro.dart
+```
+
+---
+
+Feito por [Henrique Farini](https://github.com/Henrique-Farini).
